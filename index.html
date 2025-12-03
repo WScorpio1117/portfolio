@@ -3,943 +3,742 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>白蠍 WhiteScorpio - 個人作品集</title>
+    <title>白蠍 WhiteScorpio - 攝影師 | 創作者 | 旅行者</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-  --color-white: rgba(255, 255, 255, 1);
-  --color-black: rgba(0, 0, 0, 1);
-  --color-cream-50: rgba(252, 252, 249, 1);
-  --color-cream-100: rgba(255, 255, 253, 1);
-  --color-gray-200: rgba(245, 245, 245, 1);
-  --color-gray-300: rgba(167, 169, 169, 1);
-  --color-gray-400: rgba(119, 124, 124, 1);
-  --color-slate-500: rgba(98, 108, 113, 1);
-  --color-brown-600: rgba(94, 82, 64, 1);
-  --color-charcoal-700: rgba(31, 33, 33, 1);
-  --color-charcoal-800: rgba(38, 40, 40, 1);
-  --color-slate-900: rgba(19, 52, 59, 1);
-  --color-teal-300: rgba(50, 184, 198, 1);
-  --color-teal-400: rgba(45, 166, 178, 1);
-  --color-teal-500: rgba(33, 128, 141, 1);
-  --color-teal-600: rgba(29, 116, 128, 1);
-  --color-teal-700: rgba(26, 104, 115, 1);
-  --color-teal-800: rgba(41, 150, 161, 1);
-  --color-red-400: rgba(255, 84, 89, 1);
-  --color-red-500: rgba(192, 21, 47, 1);
-  --color-orange-400: rgba(230, 129, 97, 1);
-  --color-orange-500: rgba(168, 75, 47, 1);
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  --color-slate-500-rgb: 98, 108, 113;
-  --color-red-500-rgb: 192, 21, 47;
-  --color-red-400-rgb: 255, 84, 89;
-  --color-orange-500-rgb: 168, 75, 47;
-  --color-orange-400-rgb: 230, 129, 97;
-  --color-bg-1: rgba(59, 130, 246, 0.08);
-  --color-bg-2: rgba(245, 158, 11, 0.08);
-  --color-bg-3: rgba(34, 197, 94, 0.08);
-  --color-bg-4: rgba(239, 68, 68, 0.08);
-  --color-bg-5: rgba(147, 51, 234, 0.08);
-  --color-bg-6: rgba(249, 115, 22, 0.08);
-  --color-bg-7: rgba(236, 72, 153, 0.08);
-  --color-bg-8: rgba(6, 182, 212, 0.08);
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
-  --color-warning: var(--color-orange-500);
-  --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-  --focus-ring: 0 0 0 3px var(--color-focus-ring);
-  --focus-outline: 2px solid var(--color-primary);
-  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-size-xl: 18px;
-  --font-size-2xl: 20px;
-  --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 550;
-  --font-weight-bold: 600;
-  --line-height-normal: 1.5;
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --radius-sm: 6px;
-  --radius-base: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-gray-400-rgb: 119, 124, 124;
-    --color-teal-300-rgb: 50, 184, 198;
-    --color-gray-300-rgb: 167, 169, 169;
-    --color-gray-200-rgb: 245, 245, 245;
-    --color-bg-1: rgba(29, 78, 216, 0.15);
-    --color-bg-2: rgba(180, 83, 9, 0.15);
-    --color-bg-3: rgba(21, 128, 61, 0.15);
-    --color-bg-4: rgba(185, 28, 28, 0.15);
-    --color-bg-5: rgba(107, 33, 168, 0.15);
-    --color-bg-6: rgba(194, 65, 12, 0.15);
-    --color-bg-7: rgba(190, 24, 93, 0.15);
-    --color-bg-8: rgba(8, 145, 178, 0.15);
-    --color-background: var(--color-charcoal-700);
-    --color-surface: var(--color-charcoal-800);
-    --color-text: var(--color-gray-200);
-    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-    --color-primary: var(--color-teal-300);
-    --color-primary-hover: var(--color-teal-400);
-    --color-primary-active: var(--color-teal-800);
-    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-error: var(--color-red-400);
-    --color-success: var(--color-teal-300);
-    --color-warning: var(--color-orange-400);
-    --color-info: var(--color-gray-300);
-    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-    --color-btn-primary-text: var(--color-slate-900);
-    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-  }
-}
-
-@font-face {
-  font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-family-base);
-  background-color: var(--color-background);
-  color: var(--color-text);
-  line-height: var(--line-height-normal);
-  font-size: var(--font-size-base);
-}
-
-/* 容器樣式 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-32) var(--space-16);
-}
-
-/* 標題樣式 */
-h1 {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-16);
-  color: var(--color-text);
-}
-
-h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-16);
-  color: var(--color-text);
-}
-
-/* 導航按鈕 */
-.nav-buttons {
-  display: flex;
-  gap: var(--space-12);
-  margin-bottom: var(--space-32);
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: var(--space-12) var(--space-24);
-  border: none;
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-btn-primary-text);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-hover);
-}
-
-.btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-secondary-hover);
-}
-
-/* 登入介面 */
-.login-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-16);
-}
-
-.login-box {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-32);
-  width: 100%;
-  max-width: 400px;
-  box-shadow: var(--shadow-md);
-}
-
-.login-box h2 {
-  text-align: center;
-  margin-bottom: var(--space-24);
-}
-
-.form-group {
-  margin-bottom: var(--space-16);
-}
-
-.form-label {
-  display: block;
-  margin-bottom: var(--space-8);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text);
-  font-size: var(--font-size-sm);
-}
-
-.form-control {
-  width: 100%;
-  padding: var(--space-12);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-base);
-  background-color: var(--color-background);
-  color: var(--color-text);
-  transition: border-color var(--duration-fast) var(--ease-standard);
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: var(--focus-ring);
-}
-
-.btn-full {
-  width: 100%;
-  margin-top: var(--space-8);
-}
-
-.error-message {
-  color: var(--color-error);
-  font-size: var(--font-size-sm);
-  margin-top: var(--space-8);
-  text-align: center;
-}
-
-.success-message {
-  color: var(--color-success);
-  font-size: var(--font-size-sm);
-  margin-top: var(--space-8);
-  text-align: center;
-}
-
-.lockout-message {
-  background-color: var(--color-bg-4);
-  border: 1px solid var(--color-error);
-  border-radius: var(--radius-base);
-  padding: var(--space-12);
-  margin-top: var(--space-12);
-  text-align: center;
-}
-
-.lockout-message p {
-  color: var(--color-error);
-  font-size: var(--font-size-sm);
-  margin: var(--space-4) 0;
-}
-
-/* 後台管理介面 */
-.admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-32);
-  flex-wrap: wrap;
-  gap: var(--space-16);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--space-24);
-  margin-top: var(--space-24);
-}
-
-.project-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-20);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--duration-normal) var(--ease-standard);
-}
-
-.project-card:hover {
-  box-shadow: var(--shadow-md);
-}
-
-.project-card h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-12);
-  color: var(--color-text);
-}
-
-.project-card p {
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-16);
-}
-
-.project-actions {
-  display: flex;
-  gap: var(--space-8);
-}
-
-.btn-small {
-  padding: var(--space-8) var(--space-16);
-  font-size: var(--font-size-sm);
-}
-
-.btn-danger {
-  background-color: var(--color-error);
-  color: var(--color-white);
-}
-
-.btn-danger:hover {
-  opacity: 0.9;
-}
-
-/* 隱藏類別 */
-.hidden {
-  display: none !important;
-}
-
-/* 導航欄 */
-.navbar {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-card-border);
-  padding: var(--space-16) 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow-sm);
-}
-
-.navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-16);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-brand {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-}
-
-.navbar-menu {
-  display: flex;
-  gap: var(--space-24);
-  align-items: center;
-}
-
-.navbar-link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  transition: color var(--duration-fast) var(--ease-standard);
-  cursor: pointer;
-}
-
-.navbar-link:hover {
-  color: var(--color-primary);
-}
-
-.language-switcher {
-  display: flex;
-  gap: var(--space-8);
-  align-items: center;
-}
-
-.lang-btn {
-  padding: var(--space-4) var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.lang-btn:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-}
-
-.lang-btn.active {
-  background-color: var(--color-primary);
-  color: var(--color-btn-primary-text);
-  border-color: var(--color-primary);
-}
-
-/* 首頁英雄區 */
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: var(--space-32) var(--space-16);
-}
-
-.hero-content {
-  max-width: 800px;
-}
-
-.hero-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto var(--space-24);
-  border: 4px solid var(--color-primary);
-  box-shadow: var(--shadow-md);
-  animation: fadeInScale 0.8s var(--ease-standard);
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.hero-title {
-  font-size: 48px;
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-16);
-  animation: fadeInUp 0.8s var(--ease-standard) 0.2s both;
-}
-
-.hero-subtitle {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-32);
-  animation: fadeInUp 0.8s var(--ease-standard) 0.4s both;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-buttons {
-  display: flex;
-  gap: var(--space-16);
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s var(--ease-standard) 0.6s both;
-}
-
-/* 關於我區塊 */
-.about-section {
-  padding: var(--space-32) 0;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-32);
-  align-items: center;
-}
-
-.about-image {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-.about-text h2 {
-  margin-bottom: var(--space-16);
-}
-
-.about-text p {
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-12);
-  line-height: 1.8;
-}
-
-.social-links {
-  display: flex;
-  gap: var(--space-12);
-  margin-top: var(--space-24);
-}
-
-.social-link {
-  padding: var(--space-8) var(--space-16);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: var(--font-size-sm);
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.social-link:hover {
-  background-color: var(--color-primary);
-  color: var(--color-btn-primary-text);
-  border-color: var(--color-primary);
-}
-
-/* 技能區塊 */
-.skills-section {
-  padding: var(--space-32) 0;
-  background-color: var(--color-bg-1);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-24);
-  margin-top: var(--space-24);
-}
-
-.skill-category {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-24);
-  box-shadow: var(--shadow-sm);
-}
-
-.skill-category h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-16);
-  color: var(--color-primary);
-}
-
-.skill-list {
-  list-style: none;
-}
-
-.skill-list li {
-  padding: var(--space-8) 0;
-  color: var(--color-text-secondary);
-  border-bottom: 1px solid var(--color-card-border-inner);
-}
-
-.skill-list li:last-child {
-  border-bottom: none;
-}
-
-/* 作品集展示 */
-.portfolio-section {
-  padding: var(--space-32) 0;
-}
-
-.portfolio-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-24);
-}
-
-.info-card {
-  background-color: var(--color-bg-1);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-base);
-  padding: var(--space-16);
-  margin-bottom: var(--space-16);
-}
-
-.info-card p {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-}
-
-/* 聯絡區塊 */
-.contact-section {
-  padding: var(--space-32) 0;
-  background-color: var(--color-bg-2);
-}
-
-.contact-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-info {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-24);
-  margin-top: var(--space-24);
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-  padding: var(--space-12) 0;
-  border-bottom: 1px solid var(--color-card-border-inner);
-}
-
-.contact-item:last-child {
-  border-bottom: none;
-}
-
-.contact-item strong {
-  min-width: 100px;
-  color: var(--color-text);
-}
-
-.contact-item span {
-  color: var(--color-text-secondary);
-}
-
-/* 後台標籤頁 */
-.admin-tabs {
-  display: flex;
-  gap: var(--space-8);
-  margin-bottom: var(--space-24);
-  border-bottom: 2px solid var(--color-card-border);
-}
-
-.tab-button {
-  padding: var(--space-12) var(--space-24);
-  border: none;
-  background: transparent;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.tab-button:hover {
-  color: var(--color-text);
-}
-
-.tab-button.active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.hidden-items-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-}
-
-.hidden-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-16);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-base);
-}
-
-.hidden-item-info h4 {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-4);
-}
-
-.hidden-item-info p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-}
-
-.toggle-hidden-btn {
-  padding: var(--space-8) var(--space-16);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.toggle-hidden-btn:hover {
-  background-color: var(--color-secondary-hover);
-}
-
-.toggle-hidden-btn.hidden-active {
-  background-color: var(--color-warning);
-  color: var(--color-white);
-  border-color: var(--color-warning);
-}
-
-@media (max-width: 768px) {
-  .navbar-menu {
-    gap: var(--space-12);
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-title {
-    font-size: 36px;
-  }
-}
+            --color-bg-primary: #fcfcf9;
+            --color-bg-secondary: #fffffe;
+            --color-text-primary: #13343b;
+            --color-text-secondary: #626c71;
+            --color-accent: #21808d;
+            --color-accent-hover: #1d7480;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg-primary: #1f2121;
+                --color-bg-secondary: #262828;
+                --color-text-primary: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-accent: #32b8c6;
+                --color-accent-hover: #2da6b2;
+                --color-border: rgba(119, 124, 124, 0.3);
+                --color-card-bg: #262828;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-bg-secondary);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a, nav button {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav button:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-text-secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 2rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .skill-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--color-card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .portfolio-image:nth-child(3n+1) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .portfolio-image:nth-child(3n+2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-info p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            margin-top: 4rem;
+        }
+
+        /* Admin Panel Styles - CRITICAL FIX */
+        .admin-panel {
+            display: none !important;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg-primary);
+            z-index: 2000;
+            overflow-y: auto;
+            padding-top: 5rem;
+        }
+
+        .admin-panel.active {
+            display: block !important;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .admin-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .close-admin {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-border);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .close-admin:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .admin-card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-form input,
+        .admin-form textarea {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            font-family: inherit;
+        }
+
+        .admin-form input:focus,
+        .admin-form textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .admin-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .admin-btn-primary:hover {
+            background: var(--color-accent-hover);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a, nav button {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
     </style>
 </head>
 <body>
-    <!-- 前台網站 -->
-    <div id="frontendView">
-        <!-- 導航欄 -->
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="navbar-brand">WhiteScorpio</div>
-                <div class="navbar-menu">
-                    <a class="navbar-link" onclick="scrollToSection('home')" data-i18n="nav_home">首頁</a>
-                    <a class="navbar-link" onclick="scrollToSection('about')" data-i18n="nav_about">關於我</a>
-                    <a class="navbar-link" onclick="scrollToSection('skills')" data-i18n="nav_skills">專業技能</a>
-                    <a class="navbar-link" onclick="scrollToSection('portfolio')" data-i18n="nav_portfolio">作品集</a>
-                    <a class="navbar-link" onclick="scrollToSection('contact')" data-i18n="nav_contact">聯絡方式</a>
-                    <a class="navbar-link" onclick="showAdminLogin()" data-i18n="nav_admin">管理</a>
-                    <div class="language-switcher">
-                        <button class="lang-btn active" onclick="switchLanguage('zh-TW')" data-lang="zh-TW">中文</button>
-                        <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">English</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="#contact">聯繫</a></li>
+            <li><button id="adminToggle" onclick="toggleAdmin()">管理</button></li>
+        </ul>
+    </nav>
 
-        <!-- 首頁英雄區 -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <img id="frontendAvatar" src="https://i.imgur.com/pz5RaZh.jpeg" alt="白蠍 WhiteScorpio" class="hero-avatar">
-                <h1 class="hero-title" data-i18n="hero_title">白蠍 WhiteScorpio</h1>
-                <p class="hero-subtitle" data-i18n="hero_subtitle">攝影師 | 創作者 | 旅行者</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('portfolio')" data-i18n="view_portfolio">查看作品集</button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('contact')" data-i18n="contact_me">聯絡我</button>
-                </div>
+    <!-- Admin Panel - 修復版本 -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>管理員面板</h1>
+                <button class="close-admin" onclick="toggleAdmin()">關閉</button>
             </div>
-        </section>
 
-        <!-- 關於我 -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div>
-                        <img id="frontendBanner" src="https://i.imgur.com/rgbF4EP.jpeg" alt="白蠍" class="about-image">
+            <div class="admin-card">
+                <h3>登入</h3>
+                <div class="admin-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="username">用戶名稱</label>
+                        <input type="text" id="username" placeholder="輸入用戶名稱" />
                     </div>
-                    <div class="about-text">
-                        <h2 data-i18n="about_title">關於我</h2>
-                        <p data-i18n="about_p1">我是白蠍（WhiteScorpio），一位外冷內熱、讀理科卻感性偏多的攝影師與旅行者。個人經歷讓我不太擅長與人交流，需要一段時間熟悉，但內在其實很熱情。對生活沒有太多熱情，可能都投到喜歡的事物上了——特別是攝影。</p>
-                        <p data-i18n="about_p2">自學能力良好，大學開始自學攝影與日文。透過鏡頭捕捉世界的美好瞬間，用影像說故事是我的熱情所在。今年開始嘗試做人像與光影攝影，偶爾會到台中與台北的場次中拍照，也嘗試自己做企劃與外拍。偏愛街頭攝影，有時間就會拿著相機在市區內散步拍照。</p>
-                        <p data-i18n="about_p3">我專注於旅遊攝影、數位後製與影像編輯，致力於創造具有視覺衝擊力的作品。每一次旅行都是新的靈感來源，每一張照片都承載著獨特的記憶。</p>
-                        <p data-i18n="about_p4">較常在Discord上活動，底部有我的個人伺服器連結，歡迎加入！如果有攝影相關事物想聯繫我，可以到我的Instagram中私訊我，或寄信給我，我會盡快回復！</p>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/wscorpio.photo" target="_blank" class="social-link">Instagram</a>
-                            <a href="https://discord.gg/F8WScRCN2N" target="_blank" class="social-link">Discord</a>
-                        </div>
+                    <div class="form-group">
+                        <label for="password">密碼</label>
+                        <input type="password" id="password" placeholder="輸入密碼" />
                     </div>
+                    <button class="admin-btn admin-btn-primary" onclick="handleLogin()">登入</button>
                 </div>
             </div>
-        </section>
 
-        <!-- 專業技能 -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 data-i18n="skills_title">專業技能</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3 data-i18n="skills_photo_title">攝影技能</h3>
-                        <ul class="skill-list">
-                            <li data-i18n="skill_photo_1">數位攝影與後製</li>
-                            <li data-i18n="skill_photo_2">旅遊攝影</li>
-                            <li data-i18n="skill_photo_3">DaVinci Resolve</li>
-                            <li data-i18n="skill_photo_4">Adobe Lightroom</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3 data-i18n="skills_tech_title">技術能力</h3>
-                        <ul class="skill-list">
-                            <li data-i18n="skill_tech_1">網站開發與設計</li>
-                            <li data-i18n="skill_tech_2">社群媒體經營</li>
-                            <li data-i18n="skill_tech_3">影片剪輯與製作</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3 data-i18n="skills_lang_title">語言能力</h3>
-                        <ul class="skill-list">
-                            <li data-i18n="skill_lang_1">中文（母語）</li>
-                            <li data-i18n="skill_lang_2">英語（流利）</li>
-                            <li data-i18n="skill_lang_3">日語（基礎）</li>
-                        </ul>
-                    </div>
+            <div id="adminContent" style="display: none;">
+                <div class="admin-card">
+                    <h3>歡迎，管理員！</h3>
+                    <p>您已成功登入。在此可以管理您的作品集內容。</p>
                 </div>
             </div>
-        </section>
-
-        <!-- 作品集 -->
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <div class="portfolio-controls">
-                    <h2 data-i18n="portfolio_title">作品集</h2>
-                    <button id="showHiddenBtn" class="btn btn-secondary hidden" onclick="toggleHiddenProjects()" data-i18n="show_hidden">顯示隱藏作品</button>
-                </div>
-                <div id="publicProjectsGrid" class="projects-grid">
-                    <!-- 公開作品將在這裡顯示 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 聯絡方式 -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <h2 data-i18n="contact_title">聯絡方式</h2>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <strong data-i18n="contact_email">Email:</strong>
-                            <span>wscorpio.photo@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <strong data-i18n="contact_instagram">Instagram:</strong>
-                            <span>@wscorpio.photo</span>
-                        </div>
-                        <div class="contact-item">
-                            <strong data-i18n="contact_location">Location:</strong>
-                            <span data-i18n="contact_location_value">台中 台灣</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <!-- 登入介面 -->
-    <div id="loginView" class="login-container">
-        <div class="login-box">
-            <h2>後台登入</h2>
-            <form id="loginForm">
+    <!-- Portfolio Website -->
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in-up">
+        <div class="hero-content">
+            <h1>白蠍 WhiteScorpio</h1>
+            <p>攝影師 | 創作者 | 旅行者</p>
+            <a href="#contact" class="cta-button">聯絡我</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>關於我</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--color-accent);">名字：白蠍WhiteScorpio</h3>
+                <p><strong>本名詹鈞凱</strong>，一位外冷內熱、讀理科卻感性偏多的人。個人經歷讓我不太擅長與人交流，需要一段時間熟悉，但內在其實很熱情。對生活沒有太多熱情，可能都投到喜歡的事物上了。</p>
+
+                <h3 style="font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-accent);">背景故事</h3>
+                <p>自學能力良好，大學開始自學攝影與日文。今年開始嘗試做人像與光影攝影，偶爾會到台中與台北的場次中拍照，也嘗試自己做企劃與外拍。</p>
+
+                <h3 style="font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-accent);">興趣與專長</h3>
+                <p>偏愛街頭攝影，有時間就會拿著相機在市區內散步拍照。較常在 Discord 上活動，底部有我的個人伺服器連結，歡迎加入！</p>
+            </div>
+            <div class="profile-image" style="background: url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/32693109-1171-4acd-85c7-01b37a6db8e3') center/cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>技能與專長</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>攝影技能</h3>
+                <ul>
+                    <li>數位攝影與後製</li>
+                    <li>旅遊攝影</li>
+                    <li>DaVinci Resolve</li>
+                    <li>Adobe Lightroom</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>技術技能</h3>
+                <ul>
+                    <li>網站開發與設計</li>
+                    <li>社群媒體經營</li>
+                    <li>影片剪輯與製作</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>語言技能</h3>
+                <ul>
+                    <li>中文（母語）</li>
+                    <li>英語（流利）</li>
+                    <li>日語（基礎）</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>作品集</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 漫遊．台中</div>
+                <div class="portfolio-info">
+                    <h3>漫遊．台中</h3>
+                    <p>台中城市風景與街頭故事</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 故事．人像</div>
+                <div class="portfolio-info">
+                    <h3>故事．人像</h3>
+                    <p>人物攝影與光影故事</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 光影．瞬間</div>
+                <div class="portfolio-info">
+                    <h3>光影．瞬間</h3>
+                    <p>光影與瞬間的藝術</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 旅遊故事</div>
+                <div class="portfolio-info">
+                    <h3>旅遊故事</h3>
+                    <p>世界各地的旅遊紀錄</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>聯絡方式</h2>
+        <div class="contact-content">
+            <form class="contact-form" id="contactForm" onsubmit="handleContactForm(event)">
                 <div class="form-group">
-                    <label class="form-label" for="username">帳號</label>
-                    <input type="text" id="username" class="form-control" placeholder="請輸入帳號" required>
+                    <label for="name">名字</label>
+                    <input type="text" id="name" name="name" required />
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="password">密碼</label>
-                    <input type="password" id="password" class="form-control" placeholder="請輸入密碼" required>
+                    <label for="email">郵箱</label>
+                    <input type="email" id="email" name="email" required />
                 </div>
-                <button type="submit" class="btn btn-primary btn-full">登入</button>
-                <div id="loginError" class="error-message hidden"></div>
-                <div id="lockoutInfo" class="lockout-message hidden"></div>
+                <div class="form-group">
+                    <label for="message">訊息</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">發送</button>
             </form>
-
-        </div>
-    </div>
-
-
-
-    <!-- 後台管理介面 -->
-    <div id="adminView" class="container hidden">
-        <div class="admin-header">
-            <h1>後台管理</h1>
-            <div class="nav-buttons">
-                <button class="btn btn-secondary" onclick="showPortfolio()">返回前台</button>
-                <button class="btn btn-danger" onclick="logout()">登出</button>
+            <div class="social-links">
+                <a href="https://discord.gg/F8WScRCN2N" target="_blank" rel="noopener noreferrer" class="social-link">Discord</a>
+                <a href="https://github.com/WScorpio1117" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                <a href="https://www.instagram.com/wscorpio.photo" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="mailto:wscorpio010052@gmail.com" class="social-link">個人郵件</a>
+                <a href="mailto:wscorpio.photo@gmail.com" class="social-link">工作郵件</a>
             </div>
         </div>
+    </section>
 
-        <!-- 數據備份操作 -->
-        <div style="display: flex; gap: 16px; justify-content: flex-end; margin-bottom: 32px;">
-            <button class="btn btn-primary" id="downloadBackupBtn">下載數據備份</button>
-            <label class="btn btn-secondary" style="cursor:pointer; margin-bottom:0;">
-                上傳備份 <input type="file" id="uploadBackupInput" accept="application/json" style="display:none;">
-            </label>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 白蠍 WhiteScorpio. 版權所有。</p>
+        <p>台中 | 攝影師 | 創作者</p>
+    </footer>
 
-        <div class="admin-tabs" id="adminTabs">
-            <!-- Tabs will be rendered here dynamically -->
-        </div>
-        <div id="adminTabContents">
-            <!-- Tab contents will be rendered here dynamically -->
-        </div>
-    </div>
+    <script>
+        // 管理員預設帳密
+        const ADMIN_USERNAME = 'WScorpio-homo';
+        const ADMIN_PASSWORD = 'WScorpio1117@w@';
+        let isAdminLoggedIn = false;
 
-    <script src="app.js"></script>
+        // 切換管理面板
+        function toggleAdmin() {
+            const adminPanel = document.getElementById('adminPanel');
+            adminPanel.classList.toggle('active');
+            
+            // 重置登入狀態
+            if (!adminPanel.classList.contains('active')) {
+                isAdminLoggedIn = false;
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('adminContent').style.display = 'none';
+            }
+        }
+
+        // 處理登入
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('adminContent').style.display = 'block';
+                alert('✅ 登入成功！');
+            } else {
+                alert('❌ 用戶名稱或密碼錯誤');
+            }
+        }
+
+        // 處理聯絡表單
+        function handleContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            alert(`感謝 ${name} 的訊息！\n郵箱: ${email}\n訊息: ${message}\n\n我會盡快回覆您！`);
+            document.getElementById('contactForm').reset();
+        }
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
