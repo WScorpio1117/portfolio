@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白蠍 WhiteScorpio - 攝影師 | 創作者 | 旅行者</title>
+    <style>
+        :root {
+            --color-bg-primary: #fcfcf9;
+            --color-bg-secondary: #fffffe;
+            --color-text-primary: #13343b;
+            --color-text-secondary: #626c71;
+            --color-accent: #21808d;
+            --color-accent-hover: #1d7480;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg-primary: #1f2121;
+                --color-bg-secondary: #262828;
+                --color-text-primary: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-accent: #32b8c6;
+                --color-accent-hover: #2da6b2;
+                --color-border: rgba(119, 124, 124, 0.3);
+                --color-card-bg: #262828;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-bg-secondary);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a, nav button {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav button:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-text-secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 2rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .skill-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--color-card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .portfolio-image:nth-child(3n+1) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .portfolio-image:nth-child(3n+2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-info p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            margin-top: 4rem;
+        }
+
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg-primary);
+            z-index: 2000;
+            overflow-y: auto;
+            padding-top: 5rem;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .admin-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .close-admin {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-border);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .close-admin:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+
+        .admin-tab {
+            padding: 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .admin-tab.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        .admin-tab-content {
+            display: none;
+        }
+
+        .admin-tab-content.active {
+            display: block;
+        }
+
+        .admin-card {
+            background: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-form input,
+        .admin-form textarea,
+        .admin-form select {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            font-family: inherit;
+        }
+
+        .admin-form input:focus,
+        .admin-form textarea:focus,
+        .admin-form select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .admin-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .admin-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .admin-btn-primary:hover {
+            background: var(--color-accent-hover);
+        }
+
+        .admin-btn-danger {
+            background: #c0152f;
+            color: white;
+        }
+
+        .admin-btn-danger:hover {
+            background: #a01229;
+        }
+
+        .admin-btn-secondary {
+            background: var(--color-border);
+            color: var(--color-text-primary);
+        }
+
+        .admin-btn-secondary:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .skill-item,
+        .portfolio-item-admin {
+            background: var(--color-bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-item-content,
+        .portfolio-item-content {
+            flex: 1;
+        }
+
+        .delete-btn {
+            padding: 0.5rem 1rem;
+            background: #c0152f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .delete-btn:hover {
+            background: #a01229;
+        }
+
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .message.success {
+            background: rgba(33, 128, 141, 0.2);
+            color: var(--color-accent);
+            display: block;
+        }
+
+        .message.error {
+            background: rgba(192, 21, 47, 0.2);
+            color: #c0152f;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a, nav button {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .admin-tabs {
+                gap: 0.5rem;
+            }
+
+            .admin-tab {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="#contact">聯繫</a></li>
+            <li><button id="adminToggle" onclick="toggleAdmin()">管理</button></li>
+        </ul>
+    </nav>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>管理員面板</h1>
+                <button class="close-admin" onclick="toggleAdmin()">關閉</button>
+            </div>
+            <div class="message" id="message"></div>
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchTab('content')">內容</button>
+                <button class="admin-tab" onclick="switchTab('skills')">技能</button>
+                <button class="admin-tab" onclick="switchTab('portfolio')">作品集</button>
+                <button class="admin-tab" onclick="switchTab('social')">社群媒體</button>
+                <button class="admin-tab" onclick="switchTab('profile')">個人資料</button>
+            </div>
+
+            <!-- Content Management -->
+            <div id="content" class="admin-tab-content active">
+                <div class="admin-card">
+                    <h3>Hero 區塊</h3>
+                    <div class="admin-form">
+                        <div>
+                            <label>名字</label>
+                            <input type="text" id="heroName" placeholder="WhiteScorpio">
+                        </div>
+                        <div>
+                            <label>副標題</label>
+                            <input type="text" id="heroSubtitle" placeholder="攝影師 | 創作者 | 旅行者">
+                        </div>
+                        <button class="admin-btn admin-btn-primary" onclick="updateHero()">更新</button>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3>關於部分</h3>
+                    <div class="admin-form">
+                        <div>
+                            <label>基本介紹</label>
+                            <textarea id="aboutBasic" rows="3" placeholder="我是白蠍..."></textarea>
+                        </div>
+                        <div>
+                            <label>背景故事</label>
+                            <textarea id="aboutBackground" rows="3" placeholder="自學能力..."></textarea>
+                        </div>
+                        <div>
+                            <label>興趣與專長</label>
+                            <textarea id="aboutInterests" rows="3" placeholder="專注於旅遊攝影..."></textarea>
+                        </div>
+                        <div>
+                            <label>聯繫方式說明</label>
+                            <textarea id="aboutContact" rows="3" placeholder="較常在Discord..."></textarea>
+                        </div>
+                        <button class="admin-btn admin-btn-primary" onclick="updateAbout()">更新</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Management -->
+            <div id="skills" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3>新增技能</h3>
+                    <div class="admin-form">
+                        <input type="text" id="skillCategory" placeholder="技能分類（如：攝影技能）">
+                        <input type="text" id="skillName" placeholder="技能名稱">
+                        <button class="admin-btn admin-btn-primary" onclick="addSkill()">新增</button>
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <h3>現有技能</h3>
+                    <div id="skillsList"></div>
+                </div>
+            </div>
+
+            <!-- Portfolio Management -->
+            <div id="portfolio" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3>新增作品</h3>
+                    <div class="admin-form">
+                        <input type="text" id="portfolioTitle" placeholder="作品標題">
+                        <textarea id="portfolioDesc" rows="3" placeholder="作品描述"></textarea>
+                        <input type="text" id="portfolioLink" placeholder="作品連結">
+                        <button class="admin-btn admin-btn-primary" onclick="addPortfolio()">新增</button>
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <h3>現有作品</h3>
+                    <div id="portfolioList"></div>
+                </div>
+            </div>
+
+            <!-- Social Media Management -->
+            <div id="social" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3>社群媒體連結</h3>
+                    <div class="admin-form">
+                        <div>
+                            <label>Discord</label>
+                            <input type="text" id="socialDiscord" placeholder="https://discord.gg/...">
+                        </div>
+                        <div>
+                            <label>Instagram</label>
+                            <input type="text" id="socialInstagram" placeholder="https://instagram.com/...">
+                        </div>
+                        <div>
+                            <label>GitHub</label>
+                            <input type="text" id="socialGithub" placeholder="https://github.com/...">
+                        </div>
+                        <div>
+                            <label>郵箱 1</label>
+                            <input type="email" id="socialEmail1" placeholder="郵箱地址">
+                        </div>
+                        <div>
+                            <label>郵箱 2</label>
+                            <input type="email" id="socialEmail2" placeholder="郵箱地址">
+                        </div>
+                        <button class="admin-btn admin-btn-primary" onclick="updateSocial()">更新</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Management -->
+            <div id="profile" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3>個人資料</h3>
+                    <div class="admin-form">
+                        <div>
+                            <label>個人照片 URL</label>
+                            <input type="text" id="profileImage" placeholder="圖片連結">
+                        </div>
+                        <div>
+                            <label>版權聲明</label>
+                            <input type="text" id="profileCopyright" placeholder="© 2025 WhiteScorpio. 版權所有。">
+                        </div>
+                        <button class="admin-btn admin-btn-primary" onclick="updateProfile()">更新</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Website -->
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in-up">
+        <div class="hero-content">
+            <h1 id="displayHeroName">白蠍WhiteScorpio</h1>
+            <p id="displayHeroSubtitle">攝影師 | 創作者 | 旅行者</p>
+            <a href="#contact" class="cta-button">聯繫我</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>關於我</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--color-accent);">名字：白蠍WhiteScorpio</h3>
+                <p id="displayAboutBasic"><strong>白蠍</strong></p>
+                <h3 style="font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-accent);">背景故事</h3>
+                <p id="displayAboutBackground"></p>
+                <h3 style="font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-accent);">興趣與專長</h3>
+                <p id="displayAboutInterests"></p>
+                <h3 style="font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-accent);">聯繫方式</h3>
+                <p id="displayAboutContact">Discord伺服器</p>
+            </div>
+            <div id="displayProfileImage" class="profile-image" style="background: url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/32693109-1171-4acd-85c7-01b37a6db8e3') center/cover; display: flex; align-items: flex-end; justify-content: flex-end; padding: 1rem;">
+                <span id="displayProfileCopyright" style="background: rgba(0,0,0,0.6); color: white; padding: 0.5rem; border-radius: 4px; font-size: 0.85rem;">© 2025 WhiteScorpio</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>技能與專長</h2>
+        <div class="skills-grid" id="skillsGrid">
+            <div class="skill-card">
+                <h3>攝影技能</h3>
+                <ul>
+                    <li>數位攝影與後製</li>
+                    <li>旅遊攝影</li>
+                    <li>DaVinci Resolve</li>
+                    <li>Adobe Lightroom</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>技術技能</h3>
+                <ul>
+                    <li>網站開發與設計</li>
+                    <li>社群媒體經營</li>
+                    <li>影片剪輯與製作</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>語言技能</h3>
+                <ul>
+                    <li>中文（母語）</li>
+                    <li>英語（流利）</li>
+                    <li>日語（基礎）</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>作品集</h2>
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 漫遊．台中</div>
+                <div class="portfolio-info">
+                    <h3>漫遊．台中</h3>
+                    <p>台中城市風景與街頭故事</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 故事．人像</div>
+                <div class="portfolio-info">
+                    <h3>故事．人像</h3>
+                    <p>人物攝影與光影故事</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 光影．瞬間</div>
+                <div class="portfolio-info">
+                    <h3>光影．瞬間</h3>
+                    <p>光影與瞬間的藝術</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📸 旅遊故事</div>
+                <div class="portfolio-info">
+                    <h3>旅遊故事</h3>
+                    <p>世界各地的旅遊紀錄</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>聯繫我</h2>
+        <div class="contact-content">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">名字</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">郵箱</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">訊息</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">發送</button>
+            </form>
+            <div class="social-links" id="socialLinks">
+                <a href="https://discord.gg/F8WScRCN2N" target="_blank" rel="noopener noreferrer" class="social-link">Discord</a>
+                <a href="https://github.com/WScorpio1117" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                <a href="https://www.instagram.com/wscorpio.photo" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="mailto:wscorpio010052@gmail.com" class="social-link">郵件</a>
+                <a href="mailto:wscorpio.photo@gmail.com" class="social-link">工作郵件</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 白蠍 WhiteScorpio. 版權所有。</p>
+        <p>台中 | 攝影師 | 創作者</p>
+    </footer>
+
+    <script>
+        // Data Storage
+        let portfolioData = JSON.parse(localStorage.getItem('portfolioData')) || {
+            hero: { name: 'WhiteScorpio', subtitle: '攝影師 | 創作者 | 旅行者' },
+            about: {
+                basic: '<strong>白蠍</strong>（本名詹鈞凱），一位外冷內熱、讀理科卻感性偏多的人。',
+                background: '自學能力良好，大學開始自學攝影與日文。透過鏡頭捕捉世界的美好瞬間。',
+                interests: '今年開始嘗試做人像與光影攝影，偏愛街頭攝影。',
+                contact: '較常在Discord上活動，底部有我的個人伺服器連結。'
+            },
+            profile: {
+                image: 'https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/32693109-1171-4acd-85c7-01b37a6db8e3',
+                copyright: '© 2025 WhiteScorpio'
+            },
+            skills: [],
+            portfolio: [],
+            social: {
+                discord: 'https://discord.gg/F8WScRCN2N',
+                instagram: 'https://www.instagram.com/wscorpio.photo',
+                github: 'https://github.com/WScorpio1117',
+                email1: 'wscorpio010052@gmail.com',
+                email2: 'wscorpio.photo@gmail.com'
+            }
+        };
+
+        function saveData() {
+            localStorage.setItem('portfolioData', JSON.stringify(portfolioData));
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            setTimeout(() => {
+                msg.className = 'message';
+            }, 3000);
+        }
+
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('active');
+            if (panel.classList.contains('active')) {
+                loadAdminData();
+            }
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.admin-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function loadAdminData() {
+            document.getElementById('heroName').value = portfolioData.hero.name;
+            document.getElementById('heroSubtitle').value = portfolioData.hero.subtitle;
+            document.getElementById('aboutBasic').value = portfolioData.about.basic.replace(/<\/?strong>/g, '');
+            document.getElementById('aboutBackground').value = portfolioData.about.background;
+            document.getElementById('aboutInterests').value = portfolioData.about.interests;
+            document.getElementById('aboutContact').value = portfolioData.about.contact;
+            document.getElementById('profileImage').value = portfolioData.profile.image;
+            document.getElementById('profileCopyright').value = portfolioData.profile.copyright;
+            document.getElementById('socialDiscord').value = portfolioData.social.discord;
+            document.getElementById('socialInstagram').value = portfolioData.social.instagram;
+            document.getElementById('socialGithub').value = portfolioData.social.github;
+            document.getElementById('socialEmail1').value = portfolioData.social.email1;
+            document.getElementById('socialEmail2').value = portfolioData.social.email2;
+            renderSkills();
+            renderPortfolio();
+        }
+
+        function updateHero() {
+            portfolioData.hero.name = document.getElementById('heroName').value;
+            portfolioData.hero.subtitle = document.getElementById('heroSubtitle').value;
+            document.getElementById('displayHeroName').textContent = portfolioData.hero.name;
+            document.getElementById('displayHeroSubtitle').textContent = portfolioData.hero.subtitle;
+            saveData();
+            showMessage('Hero區塊已更新', 'success');
+        }
+
+        function updateAbout() {
+            portfolioData.about.basic = `<strong>${document.getElementById('aboutBasic').value}</strong>`;
+            portfolioData.about.background = document.getElementById('aboutBackground').value;
+            portfolioData.about.interests = document.getElementById('aboutInterests').value;
+            portfolioData.about.contact = document.getElementById('aboutContact').value;
+            document.getElementById('displayAboutBasic').innerHTML = portfolioData.about.basic;
+            document.getElementById('displayAboutBackground').textContent = portfolioData.about.background;
+            document.getElementById('displayAboutInterests').textContent = portfolioData.about.interests;
+            document.getElementById('displayAboutContact').textContent = portfolioData.about.contact;
+            saveData();
+            showMessage('關於部分已更新', 'success');
+        }
+
+        function updateProfile() {
+            portfolioData.profile.image = document.getElementById('profileImage').value;
+            portfolioData.profile.copyright = document.getElementById('profileCopyright').value;
+            const profileEl = document.getElementById('displayProfileImage');
+            profileEl.style.backgroundImage = `url(${portfolioData.profile.image})`;
+            document.getElementById('displayProfileCopyright').textContent = portfolioData.profile.copyright;
+            saveData();
+            showMessage('個人資料已更新', 'success');
+        }
+
+        function addSkill() {
+            const category = document.getElementById('skillCategory').value;
+            const name = document.getElementById('skillName').value;
+            if (category && name) {
+                portfolioData.skills.push({ category, name });
+                document.getElementById('skillCategory').value = '';
+                document.getElementById('skillName').value = '';
+                saveData();
+                renderSkills();
+                showMessage('技能已新增', 'success');
+            }
+        }
+
+        function deleteSkill(index) {
+            portfolioData.skills.splice(index, 1);
+            saveData();
+            renderSkills();
+            showMessage('技能已刪除', 'success');
+        }
+
+        function renderSkills() {
+            const list = document.getElementById('skillsList');
+            list.innerHTML = portfolioData.skills.map((skill, index) => `
+                <div class="skill-item">
+                    <div class="skill-item-content">
+                        <strong>${skill.category}</strong> - ${skill.name}
+                    </div>
+                    <button class="delete-btn" onclick="deleteSkill(${index})">刪除</button>
+                </div>
+            `).join('');
+        }
+
+        function addPortfolio() {
+            const title = document.getElementById('portfolioTitle').value;
+            const desc = document.getElementById('portfolioDesc').value;
+            const link = document.getElementById('portfolioLink').value;
+            if (title && desc) {
+                portfolioData.portfolio.push({ title, desc, link });
+                document.getElementById('portfolioTitle').value = '';
+                document.getElementById('portfolioDesc').value = '';
+                document.getElementById('portfolioLink').value = '';
+                saveData();
+                renderPortfolio();
+                showMessage('作品已新增', 'success');
+            }
+        }
+
+        function deletePortfolio(index) {
+            portfolioData.portfolio.splice(index, 1);
+            saveData();
+            renderPortfolio();
+            showMessage('作品已刪除', 'success');
+        }
+
+        function renderPortfolio() {
+            const list = document.getElementById('portfolioList');
+            list.innerHTML = portfolioData.portfolio.map((item, index) => `
+                <div class="portfolio-item-admin">
+                    <div class="portfolio-item-content">
+                        <strong>${item.title}</strong><br>
+                        <small>${item.desc}</small><br>
+                        ${item.link ? `<small><a href="${item.link}" target="_blank">${item.link}</a></small>` : ''}
+                    </div>
+                    <button class="delete-btn" onclick="deletePortfolio(${index})">刪除</button>
+                </div>
+            `).join('');
+        }
+
+        function updateSocial() {
+            portfolioData.social.discord = document.getElementById('socialDiscord').value;
+            portfolioData.social.instagram = document.getElementById('socialInstagram').value;
+            portfolioData.social.github = document.getElementById('socialGithub').value;
+            portfolioData.social.email1 = document.getElementById('socialEmail1').value;
+            portfolioData.social.email2 = document.getElementById('socialEmail2').value;
+            updateSocialLinks();
+            saveData();
+            showMessage('社群媒體連結已更新', 'success');
+        }
+
+        function updateSocialLinks() {
+            const links = document.getElementById('socialLinks');
+            links.innerHTML = `
+                <a href="${portfolioData.social.discord}" target="_blank" rel="noopener noreferrer" class="social-link">Discord</a>
+                <a href="${portfolioData.social.github}" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                <a href="${portfolioData.social.instagram}" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="mailto:${portfolioData.social.email1}" class="social-link">郵件</a>
+                <a href="mailto:${portfolioData.social.email2}" class="social-link">工作郵件</a>
+            `;
+        }
+
+        // Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            alert(`感謝 ${name} 的訊息！\n郵箱: ${email}\n訊息: ${message}\n\n我會盡快回覆您！`);
+            this.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize on load
+        window.addEventListener('load', function() {
+            updateSocialLinks();
+            document.getElementById('displayAboutBasic').innerHTML = portfolioData.about.basic;
+            document.getElementById('displayAboutBackground').textContent = portfolioData.about.background;
+            document.getElementById('displayAboutInterests').textContent = portfolioData.about.interests;
+            document.getElementById('displayAboutContact').textContent = portfolioData.about.contact;
+        });
+    </script>
+</body>
+</html>
